@@ -29,12 +29,12 @@
 		public function insert_product($data,$files){
 
 			
-			$productName = mysqli_real_escape_string($this->db->link, $data['productName']);
-			$brand = mysqli_real_escape_string($this->db->link, $data['brand']);
-			$category = mysqli_real_escape_string($this->db->link, $data['category']);
-			$product_desc = mysqli_real_escape_string($this->db->link, $data['product_desc']);
-			$price = mysqli_real_escape_string($this->db->link, $data['price']);
-			$type = mysqli_real_escape_string($this->db->link, $data['type']);
+			$productName = pg_real_escape_string($this->db->link, $data['productName']);
+			$brand = pg_real_escape_string($this->db->link, $data['brand']);
+			$category = pg_real_escape_string($this->db->link, $data['category']);
+			$product_desc = pg_real_escape_string($this->db->link, $data['product_desc']);
+			$price = pg_real_escape_string($this->db->link, $data['price']);
+			$type = pg_real_escape_string($this->db->link, $data['type']);
 			//Kiem tra hình ảnh và lấy hình ảnh cho vào folder upload
 			$permited  = array('jpg', 'jpeg', 'png', 'gif');
 			$file_name = $_FILES['image']['name'];
@@ -63,8 +63,8 @@
 			}
 		}
 		public function insert_slider($data,$files){
-			$sliderName = mysqli_real_escape_string($this->db->link, $data['sliderName']);
-			$type = mysqli_real_escape_string($this->db->link, $data['type']);
+			$sliderName = pg_real_escape_string($this->db->link, $data['sliderName']);
+			$type = pg_real_escape_string($this->db->link, $data['type']);
 			
 			//Kiem tra hình ảnh và lấy hình ảnh cho vào folder upload
 			$permited  = array('jpg', 'jpeg', 'png', 'gif');
@@ -150,7 +150,7 @@
 		}
 		public function update_type_slider($id,$type){
 
-			$type = mysqli_real_escape_string($this->db->link, $type);
+			$type = pg_real_escape_string($this->db->link, $type);
 			$query = "UPDATE tbl_slider SET type = '$type' where sliderId='$id'";
 			$result = $this->db->update($query);
 			return $result;
@@ -169,12 +169,12 @@
 		public function update_product($data,$files,$id){
 
 		
-			$productName = mysqli_real_escape_string($this->db->link, $data['productName']);
-			$brand = mysqli_real_escape_string($this->db->link, $data['brand']);
-			$category = mysqli_real_escape_string($this->db->link, $data['category']);
-			$product_desc = mysqli_real_escape_string($this->db->link, $data['product_desc']);
-			$price = mysqli_real_escape_string($this->db->link, $data['price']);
-			$type = mysqli_real_escape_string($this->db->link, $data['type']);
+			$productName = pg_real_escape_string($this->db->link, $data['productName']);
+			$brand = pg_real_escape_string($this->db->link, $data['brand']);
+			$category = pg_real_escape_string($this->db->link, $data['category']);
+			$product_desc = pg_real_escape_string($this->db->link, $data['product_desc']);
+			$price = pg_real_escape_string($this->db->link, $data['price']);
+			$type = pg_real_escape_string($this->db->link, $data['type']);
 			//Kiem tra hình ảnh và lấy hình ảnh cho vào folder upload
 			$permited  = array('jpg', 'jpeg', 'png', 'gif');
 
@@ -336,8 +336,8 @@
 		}
 		public function insertCompare($productid, $customer_id){
 			
-			$productid = mysqli_real_escape_string($this->db->link, $productid);
-			$customer_id = mysqli_real_escape_string($this->db->link, $customer_id);
+			$productid = pg_real_escape_string($this->db->link, $productid);
+			$customer_id = pg_real_escape_string($this->db->link, $customer_id);
 			
 			$check_compare = "SELECT * FROM tbl_compare WHERE productId = '$productid' AND customer_id ='$customer_id'";
 			$result_check_compare = $this->db->select($check_compare);
@@ -369,8 +369,8 @@
 			}
 		}
 		public function insertWishlist($productid, $customer_id){
-			$productid = mysqli_real_escape_string($this->db->link, $productid);
-			$customer_id = mysqli_real_escape_string($this->db->link, $customer_id);
+			$productid = pg_real_escape_string($this->db->link, $productid);
+			$customer_id = pg_real_escape_string($this->db->link, $customer_id);
 			
 			$check_wlist = "SELECT * FROM tbl_wishlist WHERE productId = '$productid' AND customer_id ='$customer_id'";
 			$result_check_wlist = $this->db->select($check_wlist);

@@ -21,8 +21,8 @@
 		public function add_to_cart($quantity, $id){
 
 			$quantity = $this->fm->validation($quantity);
-			$quantity = mysqli_real_escape_string($this->db->link, $quantity);
-			$id = mysqli_real_escape_string($this->db->link, $id);
+			$quantity = pg_real_escape_string($this->db->link, $quantity);
+			$id = pg_real_escape_string($this->db->link, $id);
 			$sId = session_id();
 			$check_cart = "SELECT * FROM tbl_cart WHERE productId = '$id' AND sId ='$sId'";
 			$result_check_cart = $this->db->select($check_cart);
@@ -58,8 +58,8 @@
 			return $result;
 		}
 		public function update_quantity_cart($quantity, $cartId){
-			$quantity = mysqli_real_escape_string($this->db->link, $quantity);
-			$cartId = mysqli_real_escape_string($this->db->link, $cartId);
+			$quantity = pg_real_escape_string($this->db->link, $quantity);
+			$cartId = pg_real_escape_string($this->db->link, $cartId);
 			$query = "UPDATE tbl_cart SET
 
 					quantity = '$quantity'
@@ -76,7 +76,7 @@
 		
 		}
 		public function del_product_cart($cartid){
-			$cartid = mysqli_real_escape_string($this->db->link, $cartid);
+			$cartid = pg_real_escape_string($this->db->link, $cartid);
 			$query = "DELETE FROM tbl_cart WHERE cartId = '$cartid'";
 			$result = $this->db->delete($query);
 			if($result){
@@ -147,9 +147,9 @@
 			return $get_inbox_cart;
 		}
 		public function shifted($id,$time,$price){
-			$id = mysqli_real_escape_string($this->db->link, $id);
-			$time = mysqli_real_escape_string($this->db->link, $time);
-			$price = mysqli_real_escape_string($this->db->link, $price);
+			$id = pg_real_escape_string($this->db->link, $id);
+			$time = pg_real_escape_string($this->db->link, $time);
+			$price = pg_real_escape_string($this->db->link, $price);
 			$query = "UPDATE tbl_order SET
 
 					status = '1'
@@ -165,9 +165,9 @@
 			}
 		}
 		public function del_shifted($id,$time,$price){
-			$id = mysqli_real_escape_string($this->db->link, $id);
-			$time = mysqli_real_escape_string($this->db->link, $time);
-			$price = mysqli_real_escape_string($this->db->link, $price);
+			$id = pg_real_escape_string($this->db->link, $id);
+			$time = pg_real_escape_string($this->db->link, $time);
+			$price = pg_real_escape_string($this->db->link, $price);
 			$query = "DELETE FROM tbl_order 
 					WHERE id = '$id' AND date_order='$time' AND price ='$price'";
 			$result = $this->db->update($query);
@@ -180,9 +180,9 @@
 			}
 		}
 		public function shifted_confirm($id,$time,$price){
-			$id = mysqli_real_escape_string($this->db->link, $id);
-			$time = mysqli_real_escape_string($this->db->link, $time);
-			$price = mysqli_real_escape_string($this->db->link, $price);
+			$id = pg_real_escape_string($this->db->link, $id);
+			$time = pg_real_escape_string($this->db->link, $time);
+			$price = pg_real_escape_string($this->db->link, $price);
 			$query = "UPDATE tbl_order SET
 
 					status = '2'

@@ -22,7 +22,7 @@
 		public function insert_brand($brandName){
 
 			$brandName = $this->fm->validation($brandName);
-			$brandName = mysqli_real_escape_string($this->db->link, $brandName);
+			$brandName = pg_real_escape_string($this->db->link, $brandName);
 			
 			if(empty($brandName)){
 				$alert = "<span class='error'>Brand must be not empty</span>";
@@ -68,8 +68,8 @@
 		public function update_brand($brandName,$id){
 
 			$brandName = $this->fm->validation($brandName);
-			$brandName = mysqli_real_escape_string($this->db->link, $brandName);
-			$id = mysqli_real_escape_string($this->db->link, $id);
+			$brandName = pg_real_escape_string($this->db->link, $brandName);
+			$id = pg_real_escape_string($this->db->link, $id);
 
 			if(empty($brandName)){
 				$alert = "<span class='error'>Brand must be not empty</span>";

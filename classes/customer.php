@@ -54,14 +54,14 @@
 			return $result;
 		}
 		public function insert_customers($data){
-			$name = mysqli_real_escape_string($this->db->link, $data['name']);
-			$city = mysqli_real_escape_string($this->db->link, $data['city']);
-			$zipcode = mysqli_real_escape_string($this->db->link, $data['zipcode']);
-			$email = mysqli_real_escape_string($this->db->link, $data['email']);
-			$address = mysqli_real_escape_string($this->db->link, $data['address']);
-			$country = mysqli_real_escape_string($this->db->link, $data['country']);
-			$phone = mysqli_real_escape_string($this->db->link, $data['phone']);
-			$password = mysqli_real_escape_string($this->db->link, md5($data['password']));
+			$name = pg_real_escape_string($this->db->link, $data['name']);
+			$city = pg_real_escape_string($this->db->link, $data['city']);
+			$zipcode = pg_real_escape_string($this->db->link, $data['zipcode']);
+			$email = pg_real_escape_string($this->db->link, $data['email']);
+			$address = pg_real_escape_string($this->db->link, $data['address']);
+			$country = pg_real_escape_string($this->db->link, $data['country']);
+			$phone = pg_real_escape_string($this->db->link, $data['phone']);
+			$password = pg_real_escape_string($this->db->link, md5($data['password']));
 			if($name=="" || $city=="" || $zipcode=="" || $email=="" || $address=="" || $country=="" || $phone =="" || $password ==""){
 				$alert = "<span class='error'>Fields must be not empty</span>";
 				return $alert;
@@ -85,8 +85,8 @@
 			}
 		}
 		public function login_customers($data){
-			$email = mysqli_real_escape_string($this->db->link, $data['email']);
-			$password = mysqli_real_escape_string($this->db->link, md5($data['password']));
+			$email = pg_real_escape_string($this->db->link, $data['email']);
+			$password = pg_real_escape_string($this->db->link, md5($data['password']));
 			if($email=='' || $password==''){
 				$alert = "<span class='error'>Password and Email must be not empty</span>";
 				return $alert;
@@ -113,11 +113,11 @@
 			return $result;
 		}
 		public function update_customers($data, $id){
-			$name = mysqli_real_escape_string($this->db->link, $data['name']);
-			$zipcode = mysqli_real_escape_string($this->db->link, $data['zipcode']);
-			$email = mysqli_real_escape_string($this->db->link, $data['email']);
-			$address = mysqli_real_escape_string($this->db->link, $data['address']);
-			$phone = mysqli_real_escape_string($this->db->link, $data['phone']);
+			$name = pg_real_escape_string($this->db->link, $data['name']);
+			$zipcode = pg_real_escape_string($this->db->link, $data['zipcode']);
+			$email = pg_real_escape_string($this->db->link, $data['email']);
+			$address = pg_real_escape_string($this->db->link, $data['address']);
+			$phone = pg_real_escape_string($this->db->link, $data['phone']);
 			
 			if($name=="" || $zipcode=="" || $email=="" || $address=="" || $phone ==""){
 				$alert = "<span class='error'>Fields must be not empty</span>";

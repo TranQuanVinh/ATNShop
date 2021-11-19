@@ -24,7 +24,7 @@
 		public function insert_category($catName){
 
 			$catName = $this->fm->validation($catName);
-			$catName = mysqli_real_escape_string($this->db->link, $catName);
+			$catName = pg_real_escape_string($this->db->link, $catName);
 			
 			if(empty($catName)){
 				$alert = "<span class='error'>Category must be not empty</span>";
@@ -49,8 +49,8 @@
 		public function update_category($catName,$id){
 
 			$catName = $this->fm->validation($catName);
-			$catName = mysqli_real_escape_string($this->db->link, $catName);
-			$id = mysqli_real_escape_string($this->db->link, $id);
+			$catName = pg_real_escape_string($this->db->link, $catName);
+			$id = pg_real_escape_string($this->db->link, $id);
 
 			if(empty($catName)){
 				$alert = "<span class='error'>Category must be not empty</span>";
