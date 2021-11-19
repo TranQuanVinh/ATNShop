@@ -95,7 +95,7 @@
 				$result_check = $this->db->select($check_login);
 				if($result_check){
 
-					$value = $result_check->fetch_assoc();
+					$value = $result_check->pg_fetch_assoc();
 					Session::set('customer_login',true);
 					Session::set('customer_id',$value['id']);
 					Session::set('customer_name',$value['name']);

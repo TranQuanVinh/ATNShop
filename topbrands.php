@@ -15,7 +15,7 @@
     	<?php
 	     	 $name_brand = $br->get_name_by_brand($id);
 	      	 if($name_brand){
-	      	 	while($result_name = $name_brand->fetch_assoc()){
+	      	 	while($result_name = $name_brand->pg_fetch_assoc()){
 	      	?>
     	<div class="content_top">
     		
@@ -33,7 +33,7 @@
 	      	<?php
 	      	 $brandpr = $br->get_product_by_brand($id);
 	      	 if($brandpr){
-	      	 	while($result = $brandpr->fetch_assoc()){
+	      	 	while($result = $brandpr->pg_fetch_assoc()){
 	      	?>
 				<div class="grid_1_of_4 images_1_of_4">
 					 <a href="details.php?proid=<?php echo $result['productId'] ?>"><img src="admin/uploads/<?php echo $result['image'] ?>" width="200px" alt="" /></a>

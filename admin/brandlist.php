@@ -32,7 +32,7 @@
 						$show_brand = $brand->show_brand();
 						if($show_brand){
 							$i = 0;
-							while($result = $show_brand->fetch_assoc()){
+							while($result = $show_brand->pg_fetch_assoc()){
 								$i++;
 							
 					?>

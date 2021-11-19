@@ -38,7 +38,7 @@
 				$id = Session::get('customer_id');
 				$get_customers = $cs->show_customers($id);
 				if($get_customers){
-					while($result = $get_customers->fetch_assoc()){
+					while($result = $get_customers->pg_fetch_assoc()){
 
 				?>
 				<tr>

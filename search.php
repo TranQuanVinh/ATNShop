@@ -27,7 +27,7 @@
 	      	<?php
 	      	
 	      	 if($search_product){
-	      	 	while($result = $search_product->fetch_assoc()){
+	      	 	while($result = $search_product->pg_fetch_assoc()){
 	      	?>
 				<div class="grid_1_of_4 images_1_of_4">
 					 <a href="preview-3.php"><img src="admin/uploads/<?php echo $result['image'] ?>" width="200px" alt="" /></a>

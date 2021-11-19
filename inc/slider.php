@@ -4,7 +4,7 @@
 				<?php
 				$getLastestDell = $product->getLastestDell();
 				if($getLastestDell){
-					while($resultdell = $getLastestDell->fetch_assoc()){
+					while($resultdell = $getLastestDell->pg_fetch_assoc()){
 				 ?>
 				<div class="listview_1_of_2 images_1_of_2">
 					<div class="listimg listimg_2_of_1">
@@ -22,7 +22,7 @@
 			    <?php
 				$getLastestSS = $product->getLastestSamsung();
 				if($getLastestSS){
-					while($resultss = $getLastestSS->fetch_assoc()){
+					while($resultss = $getLastestSS->pg_fetch_assoc()){
 				 ?>	
 				<div class="listview_1_of_2 images_1_of_2">
 					<div class="listimg listimg_2_of_1">
@@ -42,7 +42,7 @@
 				 <?php
 				$getLastestOp = $product->getLastestOppo();
 				if($getLastestOp){
-					while($resultap = $getLastestOp->fetch_assoc()){
+					while($resultap = $getLastestOp->pg_fetch_assoc()){
 				 ?>	
 				<div class="listview_1_of_2 images_1_of_2">
 					<div class="listimg listimg_2_of_1">
@@ -60,7 +60,7 @@
 			     <?php
 				$getLastestHw = $product->getLastestHuawei();
 				if($getLastestHw){
-					while($resulthw = $getLastestHw->fetch_assoc()){
+					while($resulthw = $getLastestHw->pg_fetch_assoc()){
 				 ?>		
 				<div class="listview_1_of_2 images_1_of_2">
 					<div class="listimg listimg_2_of_1">
@@ -87,7 +87,7 @@
 						<?php
 						$get_slider = $product->show_slider();
 						if($get_slider){
-							while($result_slider = $get_slider->fetch_assoc()){
+							while($result_slider = $get_slider->pg_fetch_assoc()){
 
 						 ?>
 						<li><img src="admin/uploads/<?php echo $result_slider['slider_image'] ?>" alt="<?php echo $result_slider['sliderName'] ?>"/></li>

@@ -32,7 +32,7 @@
 			}else{
 
 				$query = "SELECT * FROM tbl_product WHERE productId = '$id'";
-				$result = $this->db->select($query)->fetch_assoc();
+				$result = $this->db->select($query)->pg_fetch_assoc();
 				
 				$image = $result["image"];
 				$price = $result["price"];
@@ -116,7 +116,7 @@
 			$query = "SELECT * FROM tbl_cart WHERE sId = '$sId'";
 			$get_product = $this->db->select($query);
 			if($get_product){
-				while($result = $get_product->fetch_assoc()){
+				while($result = $get_product->pg_fetch_assoc()){
 					$productid = $result['productId'];
 					$productName = $result['productName'];
 					$quantity = $result['quantity'];

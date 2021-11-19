@@ -45,7 +45,7 @@
                             $catlist = $cat->show_category();
 
                             if($catlist){
-                                while($result = $catlist->fetch_assoc()){
+                                while($result = $catlist->pg_fetch_assoc()){
                              ?>
 
                             <option value="<?php echo $result['catId'] ?>"><?php echo $result['catName'] ?></option>
@@ -70,7 +70,7 @@
                             $brandlist = $brand->show_brand();
 
                             if($brandlist){
-                                while($result = $brandlist->fetch_assoc()){
+                                while($result = $brandlist->pg_fetch_assoc()){
                              ?>
 
                             <option value="<?php echo $result['brandId'] ?>"><?php echo $result['brandName'] ?></option>

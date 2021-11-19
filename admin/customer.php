@@ -28,7 +28,7 @@ include_once ($filepath.'/../helpers/format.php');
                 <?php
                     $get_customer = $cs->show_customers($id);
                     if($get_customer){
-                        while($result = $get_customer->fetch_assoc()){
+                        while($result = $get_customer->pg_fetch_assoc()){
                        
                 ?>
                  <form action="" method="post">

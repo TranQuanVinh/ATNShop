@@ -42,7 +42,7 @@
 					$get_slider = $product->show_slider_list();
 					if($get_slider){
 						$i = 0;
-						while($result_slider = $get_slider->fetch_assoc()){
+						while($result_slider = $get_slider->pg_fetch_assoc()){
 							$i++;
 						?>
 				<tr class="odd gradeX">

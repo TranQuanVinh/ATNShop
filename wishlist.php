@@ -29,7 +29,7 @@
 							$get_wishlist = $product->get_wishlist($customer_id);
 							if($get_wishlist){
 								$i = 0;
-								while($result = $get_wishlist->fetch_assoc()){
+								while($result = $get_wishlist->pg_fetch_assoc()){
 									$i++;
 							?>
 							<tr>

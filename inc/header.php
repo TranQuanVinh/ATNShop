@@ -128,7 +128,7 @@
 	        	<?php
 	        	$cate = $cat->show_category();
 	        	if($cate){
-	      			while($result_new = $cate->fetch_assoc()){
+	      			while($result_new = $cate->pg_fetch_assoc()){
 
 	      		?>
 	        	
@@ -152,7 +152,7 @@
 	        	<?php
 	        	$brand = $br->show_brand_home();
 	        	if($brand){
-	      			while($result_new = $brand->fetch_assoc()){
+	      			while($result_new = $brand->pg_fetch_assoc()){
 
 	      		?>
 	        	

@@ -32,7 +32,7 @@
 						$show_cate = $cat->show_category();
 						if($show_cate){
 							$i = 0;
-							while($result = $show_cate->fetch_assoc()){
+							while($result = $show_cate->pg_fetch_assoc()){
 								$i++;
 							
 					?>

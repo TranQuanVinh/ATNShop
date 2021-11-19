@@ -62,7 +62,7 @@ include_once ($filepath.'/../helpers/format.php');
 						$get_inbox_cart = $ct->get_inbox_cart();
 						if($get_inbox_cart){
 							$i = 0;
-							while($result = $get_inbox_cart->fetch_assoc()){
+							while($result = $get_inbox_cart->pg_fetch_assoc()){
 								$i++;
 						 ?>
 						

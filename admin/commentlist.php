@@ -38,7 +38,7 @@
 				$cmlist = $cs->show_comment();
 				if($cmlist){
 					$i = 0;
-					while($result = $cmlist->fetch_assoc()){
+					while($result = $cmlist->pg_fetch_assoc()){
 						$i++;
 				?>
 				<tr class="odd gradeX">

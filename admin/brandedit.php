@@ -31,7 +31,7 @@
                 <?php
                     $get_brand_name = $brand->getbrandbyId($id);
                     if($get_brand_name){
-                        while($result = $get_brand_name->fetch_assoc()){
+                        while($result = $get_brand_name->pg_fetch_assoc()){
                        
                 ?>
                  <form action="" method="post">

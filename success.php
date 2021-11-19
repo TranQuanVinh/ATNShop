@@ -24,7 +24,7 @@ p.success_note {
 			 $get_amount = $ct->getAmountPrice($customer_id);
 			 if($get_amount){
 			 	$amount = 0;
-			 	while($result = $get_amount->fetch_assoc()){
+			 	while($result = $get_amount->pg_fetch_assoc()){
 			 		$price = $result['price'];
 			 		$amount += $price; 
 

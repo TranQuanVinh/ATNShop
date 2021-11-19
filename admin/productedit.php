@@ -31,7 +31,7 @@
         <?php
          $get_product_by_id = $pd->getproductbyId($id);
             if($get_product_by_id){
-                while($result_product = $get_product_by_id->fetch_assoc()){
+                while($result_product = $get_product_by_id->pg_fetch_assoc()){
         ?>     
          <form action="" method="post" enctype="multipart/form-data">
             <table class="form">
@@ -56,7 +56,7 @@
                             $catlist = $cat->show_category();
 
                             if($catlist){
-                                while($result = $catlist->fetch_assoc()){
+                                while($result = $catlist->pg_fetch_assoc()){
                              ?>
 
 
@@ -89,7 +89,7 @@
                             $brandlist = $brand->show_brand();
 
                             if($brandlist){
-                                while($result = $brandlist->fetch_assoc()){
+                                while($result = $brandlist->pg_fetch_assoc()){
                              ?>
 
                             <option

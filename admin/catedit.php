@@ -31,7 +31,7 @@
                 <?php
                     $get_cate_name = $cat->getcatbyId($id);
                     if($get_cate_name){
-                        while($result = $get_cate_name->fetch_assoc()){
+                        while($result = $get_cate_name->pg_fetch_assoc()){
                        
                 ?>
                  <form action="" method="post">

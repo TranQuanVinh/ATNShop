@@ -15,7 +15,7 @@
 	      	<?php
 	      		$product_feathered = $product->getproduct_feathered();
 	      		if($product_feathered){
-	      			while($result = $product_feathered->fetch_assoc()){
+	      			while($result = $product_feathered->pg_fetch_assoc()){
 
 	      	?>
 				<div class="grid_1_of_4 images_1_of_4">
@@ -40,7 +40,7 @@
 				<?php
 	      		$product_new = $product->getproduct_new();
 	      		if($product_new){
-	      			while($result_new = $product_new->fetch_assoc()){
+	      			while($result_new = $product_new->pg_fetch_assoc()){
 
 	      		?>
 				<div class="grid_1_of_4 images_1_of_4">

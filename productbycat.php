@@ -21,7 +21,7 @@
     	<?php
 	     	 $name_cat = $cat->get_name_by_cat($id);
 	      	 if($name_cat){
-	      	 	while($result_name = $name_cat->fetch_assoc()){
+	      	 	while($result_name = $name_cat->pg_fetch_assoc()){
 	      	?>
     	<div class="content_top">
     		
@@ -39,7 +39,7 @@
 	      	<?php
 	      	 $productbycat = $cat->get_product_by_cat($id);
 	      	 if($productbycat){
-	      	 	while($result = $productbycat->fetch_assoc()){
+	      	 	while($result = $productbycat->pg_fetch_assoc()){
 	      	?>
 				<div class="grid_1_of_4 images_1_of_4">
 					 <a href="details.php?proid=<?php echo $result['productId'] ?>"><img src="admin/uploads/<?php echo $result['image'] ?>" width="200px" alt="" /></a>

@@ -348,7 +348,7 @@
 			}else{
 
 			$query = "SELECT * FROM tbl_product WHERE productId = '$productid'";
-			$result = $this->db->select($query)->fetch_assoc();
+			$result = $this->db->select($query)->pg_fetch_assoc();
 			
 			$productName = $result["productName"];
 			$price = $result["price"];
@@ -381,7 +381,7 @@
 			}else{
 
 			$query = "SELECT * FROM tbl_product WHERE productId = '$productid'";
-			$result = $this->db->select($query)->fetch_assoc();
+			$result = $this->db->select($query)->pg_fetch_assoc();
 			
 			$productName = $result["productName"];
 			$price = $result["price"];

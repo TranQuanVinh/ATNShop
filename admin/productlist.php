@@ -42,7 +42,7 @@
 				$pdlist = $pd->show_product();
 				if($pdlist){
 					$i = 0;
-					while($result = $pdlist->fetch_assoc()){
+					while($result = $pdlist->pg_fetch_assoc()){
 						$i++;
 				?>
 				<tr class="odd gradeX">
