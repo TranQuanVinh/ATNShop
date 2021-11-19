@@ -77,7 +77,7 @@
 					$trang = 1;
 				}
 				$product_all = $product->get_all_product(); 
-				$product_count = mysqli_num_rows($product_all);
+				$product_count = pg_num_rows($product_all);
 				$product_button = ceil($product_count/4);
 				$i = 1;
 				echo '<p>Page : </p>';
